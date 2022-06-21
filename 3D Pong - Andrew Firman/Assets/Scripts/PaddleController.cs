@@ -6,10 +6,14 @@ public class PaddleController : MonoBehaviour
 {
     public KeyCode leftKey;
     public KeyCode rightKey;
+    public bool isP1;
+    public bool isP2;
+    public bool isP3;
+    public bool isP4;
     public float speedModifier;
     private Rigidbody rig;
-    public float min_x;
-    public float max_x;
+    public float min_offset;
+    public float max_offset;
 
 
     //[SerializeField] private KeyCode downKey = KeyCode.S;
@@ -55,16 +59,38 @@ public class PaddleController : MonoBehaviour
     private Vector3 GetInput()
     {
         // get input
-
-        if (Input.GetKey(leftKey) && transform.position.x > min_x)
+        if (isP1)
         {
-            return (Vector3.left * speedModifier);
+            if (Input.GetKey(leftKey) && transform.position.x > min_offset)
+            {
+                return (-transform.right * speedModifier);
+            }
+            else if (Input.GetKey(rightKey) && transform.position.x < max_offset)
+            {
+                return (transform.right * speedModifier);
+            }
+            return Vector3.zero;
         }
-        else if (Input.GetKey(rightKey) && transform.position.x < max_x)
+        else if(isP2){
+            
+            if (Input.GetKey(rightKey) && transform.position.z > min_offset)
+            {
+                //Debug.Log("Paddle2 moving left");
+                //Debug.Log(-transform.right * speedModifier);
+                return (transform.right * speedModifier);
+            }
+            else if (Input.GetKey(leftKey) && transform.position.z < max_offset)
+            {
+                return (-transform.right * speedModifier);
+            }
+            return Vector3.zero;
+        }
+        else
         {
-            return (Vector3.right * speedModifier);
+            return Vector3.zero;
         }
-        return Vector3.zero;
+       
+        
 
     }
     private void MoveObject(Vector3 movement)
