@@ -552,7 +552,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 26.991467
+  field of view: 30
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -577,13 +577,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.27998444, y: -0, z: -0, w: 0.96000457}
-  m_LocalPosition: {x: 0, y: 19.94, z: -35.33}
+  m_LocalRotation: {x: 0.4046743, y: -0, z: -0, w: 0.91446096}
+  m_LocalPosition: {x: 0, y: 29.52, z: -26.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 32.519, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 47.741, y: 0, z: 0}
 --- !u!1 &1470662311
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +691,8 @@ GameObject:
   - component: {fileID: 1903039230}
   - component: {fileID: 1903039229}
   - component: {fileID: 1903039228}
+  - component: {fileID: 1903039232}
+  - component: {fileID: 1903039233}
   m_Layer: 0
   m_Name: PlayerPaddle_1
   m_TagString: Untagged
@@ -774,3 +776,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1903039232
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903039227}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 124
+  m_CollisionDetection: 0
+--- !u!114 &1903039233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903039227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9badce7819cdfe04c9ed0cebbac5fe8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftKey: 122
+  rightKey: 120
+  speedModifier: 8
+  min_x: -8
+  max_x: 8
