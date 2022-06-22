@@ -85,6 +85,36 @@ public class PaddleController : MonoBehaviour
             }
             return Vector3.zero;
         }
+        else if (isP3)
+        {
+
+            if (Input.GetKey(leftKey) && transform.position.x > min_offset)
+            {
+                //Debug.Log("Paddle2 moving left");
+                //Debug.Log(-transform.right * speedModifier);
+                return (transform.right * speedModifier);
+            }
+            else if (Input.GetKey(rightKey) && transform.position.x < max_offset)
+            {
+                return (-transform.right * speedModifier);
+            }
+            return Vector3.zero;
+        }
+        else if (isP4)
+        {
+
+            if (Input.GetKey(rightKey) && transform.position.z < max_offset)
+            {
+                //Debug.Log("Paddle2 moving left");
+                //Debug.Log(-transform.right * speedModifier);
+                return (transform.right * speedModifier);
+            }
+            else if (Input.GetKey(leftKey) && transform.position.z > min_offset)
+            {
+                return (-transform.right * speedModifier);
+            }
+            return Vector3.zero;
+        }
         else
         {
             return Vector3.zero;
