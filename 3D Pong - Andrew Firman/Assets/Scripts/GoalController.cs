@@ -17,20 +17,20 @@ public class GoalController : MonoBehaviour
         //Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "BallBL(Clone)" || collision.gameObject.name == "BallBR(Clone)" || collision.gameObject.name == "BallTR(Clone)" || collision.gameObject.name == "BallTL(Clone)")
         {
-            Debug.Log("Ball collided.");
+            //Debug.Log("Ball collided.");
             if (isP1)
             {
                 manager.AddScore("p1", 1);
             }
-            if (isP2)
+            else if (isP2)
             {
                 manager.AddScore("p2", 1);
             }
-            if (isP3)
+            else if (isP3)
             {
                 manager.AddScore("p3", 1);
             }
-            if (isP4)
+            else if (isP4)
             {
                 manager.AddScore("p4", 1);
             }

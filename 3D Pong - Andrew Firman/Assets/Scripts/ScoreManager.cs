@@ -16,15 +16,15 @@ public class ScoreManager : MonoBehaviour
         {
             score_p1 += increment;
         }
-        if (p_side == "p2")
+        else if (p_side == "p2")
         {
             score_p2 += increment;
         }
-        if (p_side == "p3")
+        else if (p_side == "p3")
         {
             score_p3 += increment;
         }
-        if (p_side == "p4")
+        else if (p_side == "p4")
         {
             score_p4 += increment;
         }
