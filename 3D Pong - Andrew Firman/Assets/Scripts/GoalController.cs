@@ -9,13 +9,30 @@ public class GoalController : MonoBehaviour
     public bool isP2;
     public bool isP3;
     public bool isP4;
-    //public ScoreManager manager;
+
+    public ScoreManager manager;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider collision)
     {
         if (collision == ball)
         {
             Debug.Log("Ball collided.");
+            if (isP1)
+            {
+                manager.AddScore("p1",1);
+            }
+            if (isP2)
+            {
+                manager.AddScore("p2", 1);
+            }
+            if (isP3)
+            {
+                manager.AddScore("p3", 1);
+            }
+            if (isP4)
+            {
+                manager.AddScore("p4", 1);
+            }
         }
     }
 }
