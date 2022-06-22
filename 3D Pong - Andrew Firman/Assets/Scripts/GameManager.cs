@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        powerUpList = new List<GameObject>();
+        ballList = new List<GameObject>();
     }
 
     // Update is called once per frame
