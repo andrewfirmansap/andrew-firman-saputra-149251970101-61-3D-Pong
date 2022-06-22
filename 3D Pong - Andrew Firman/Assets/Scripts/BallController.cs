@@ -4,25 +4,34 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    public Vector2 speed;
+    public Vector3 speed;
     private Rigidbody rig;
-    public float resetPositionX;
-    public float resetPositionY;
-    public float resetPositionZ;
-    private Vector3 resetPosition;
+    public Vector3 resetPosition;
+    private Vector3 lastVelocity;
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody>();
         rig.velocity = speed;
-        resetPosition = new Vector3(resetPositionX, resetPositionY, resetPositionZ);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+        lastVelocity = rig.velocity;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Debug.Log(collision.gameObject.GetComponent<Rigidbody>());
+        Rigidbody CollisionRig = collision.gameObject.GetComponent<Rigidbody>();
+        //Debug.Log(CollisionRig.velocity);
+        var speed = lastVelocity.magnitude;
+        var direction = Vector3.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
 
+        rig.velocity = direction * Mathf.Max(speed, 2f);
+        rig.velocity = rig.velocity + CollisionRig.velocity;
+        
     }
     public void ResetBall()
     {
@@ -33,4 +42,5 @@ public class BallController : MonoBehaviour
     {
         rig.velocity *= magnitude;
     }
+    
 }
