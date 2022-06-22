@@ -14,12 +14,13 @@ public class GoalController : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision == ball)
+        //Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.name == "BallBL(Clone)" || collision.gameObject.name == "BallBR(Clone)" || collision.gameObject.name == "BallTR(Clone)" || collision.gameObject.name == "BallTL(Clone)")
         {
             Debug.Log("Ball collided.");
             if (isP1)
             {
-                manager.AddScore("p1",1);
+                manager.AddScore("p1", 1);
             }
             if (isP2)
             {
