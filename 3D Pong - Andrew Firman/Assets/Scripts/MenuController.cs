@@ -21,4 +21,13 @@ public class MenuController : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         //Debug.Log("Created by andrew - firman - saputra - 149251970101 - 61");
     }
+    public void ToHowTo()
+    {
+        SceneManager.LoadScene("HowTo");
+        //Debug.Log("Created by andrew - firman - saputra - 149251970101 - 61");
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
