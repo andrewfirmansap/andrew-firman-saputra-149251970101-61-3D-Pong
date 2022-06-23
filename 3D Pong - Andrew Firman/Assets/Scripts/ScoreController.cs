@@ -23,23 +23,25 @@ public class ScoreController : MonoBehaviour
         P4_score.text = manager.score_p4.ToString();
         if (gm.isGameOver())
         {
-            GameOverText.enabled = true;
-            if(!gm.isP1Dead())
+            //Debug.Log("GAME OVER Score Controller");
+            GameOverText.gameObject.SetActive(true);
+            if(gm.isP1Dead() == false)
             {
                 PlayerWonText.text = "P1 Won!";
             }
-            if (!gm.isP2Dead())
+            if (gm.isP2Dead() == false)
             {
                 PlayerWonText.text = "P2 Won!";
             }
-            if (!gm.isP3Dead())
+            if (gm.isP3Dead() ==false)
             {
                 PlayerWonText.text = "P3 Won!";
             }
-            if (!gm.isP4Dead())
+            if (gm.isP4Dead() == false)
             {
                 PlayerWonText.text = "P4 Won!";
             }
+            PlayerWonText.gameObject.SetActive(true);
         }
 
     }
