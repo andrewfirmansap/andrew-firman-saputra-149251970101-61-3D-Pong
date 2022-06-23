@@ -20,10 +20,13 @@ public class GameManager : MonoBehaviour
     private bool P2isDead;
     private bool P3isDead;
     private bool P4isDead;
+    private bool GameOver;
     private float timer;
     private int deathCount;
     public List<GameObject> ballTemplateList;
     private List<GameObject> ballList;
+
+    
    
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
         P2isDead = false;
         P3isDead = false;
         P4isDead = false;
+        GameOver = false;
         deathCount=0;
     }
 
@@ -49,9 +53,30 @@ public class GameManager : MonoBehaviour
 
         if (deathCount == 3)
         {
+            GameOver = true;
             Debug.Log("Game Over");
         }
 
+    }
+    public bool isGameOver()
+    {
+        return GameOver;
+    }
+    public bool isP1Dead()
+    {
+        return P1isDead;
+    }
+    public bool isP2Dead()
+    {
+        return P2isDead;
+    }
+    public bool isP3Dead()
+    {
+        return P3isDead;
+    }
+    public bool isP4Dead()
+    {
+        return P4isDead;
     }
     public void SpawnRandomBall()
     {
@@ -67,6 +92,12 @@ public class GameManager : MonoBehaviour
             ballList.Add(ball);
         }
         
+    }
+    public void RemoveBall(GameObject ball)
+    {
+        ballList.Remove(ball);
+        Destroy(ball);
+
     }
     public void PaddleDied(int paddleNum)
     {

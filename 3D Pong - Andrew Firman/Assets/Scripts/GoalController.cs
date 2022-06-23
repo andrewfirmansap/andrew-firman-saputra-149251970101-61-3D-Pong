@@ -11,6 +11,7 @@ public class GoalController : MonoBehaviour
     public bool isP4;
 
     public ScoreManager manager;
+    public GameManager gm;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider collision)
     {
@@ -18,6 +19,7 @@ public class GoalController : MonoBehaviour
         if (collision.gameObject.name == "BallBL(Clone)" || collision.gameObject.name == "BallBR(Clone)" || collision.gameObject.name == "BallTR(Clone)" || collision.gameObject.name == "BallTL(Clone)")
         {
             //Debug.Log("Ball collided.");
+            gm.RemoveBall(collision.gameObject);
             if (isP1)
             {
                 manager.AddScore("p1", 1);

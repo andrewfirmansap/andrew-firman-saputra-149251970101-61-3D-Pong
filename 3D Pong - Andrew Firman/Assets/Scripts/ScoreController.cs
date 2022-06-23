@@ -10,7 +10,10 @@ public class ScoreController : MonoBehaviour
     public Text P2_score;
     public Text P3_score;
     public Text P4_score;
+    public Text GameOverText;
+    public Text PlayerWonText;
     public ScoreManager manager;
+    public GameManager gm;
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +21,26 @@ public class ScoreController : MonoBehaviour
         P2_score.text = manager.score_p2.ToString();
         P3_score.text = manager.score_p3.ToString();
         P4_score.text = manager.score_p4.ToString();
+        if (gm.isGameOver())
+        {
+            GameOverText.enabled = true;
+            if(!gm.isP1Dead())
+            {
+                PlayerWonText.text = "P1 Won!";
+            }
+            if (!gm.isP2Dead())
+            {
+                PlayerWonText.text = "P2 Won!";
+            }
+            if (!gm.isP3Dead())
+            {
+                PlayerWonText.text = "P3 Won!";
+            }
+            if (!gm.isP4Dead())
+            {
+                PlayerWonText.text = "P4 Won!";
+            }
+        }
 
     }
 }
