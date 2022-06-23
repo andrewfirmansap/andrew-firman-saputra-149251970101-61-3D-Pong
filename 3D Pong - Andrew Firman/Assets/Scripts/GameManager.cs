@@ -62,28 +62,28 @@ public class GameManager : MonoBehaviour
     {
         if (paddleNum == 1)
         {
-            paddle1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            paddle1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             paddle1.GetComponent<MeshRenderer>().material = paddleDiedMaterial;
             Debug.Log("Paddle 1 died!");
 
         }
         else if (paddleNum == 2)
         {
-            paddle2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            paddle2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             paddle2.GetComponent<MeshRenderer>().material = paddleDiedMaterial;
             Debug.Log("Paddle 2 died!");
 
         }
         else if (paddleNum == 3)
         {
-            paddle3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            paddle3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             paddle3.GetComponent<MeshRenderer>().material = paddleDiedMaterial;
             Debug.Log("Paddle 3 died!");
 
         }
         else if (paddleNum == 4)
         {
-            paddle4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            paddle4.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             paddle4.GetComponent<MeshRenderer>().material = paddleDiedMaterial;
             Debug.Log("Paddle 4 died!");
 
