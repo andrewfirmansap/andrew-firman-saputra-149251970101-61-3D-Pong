@@ -10,11 +10,19 @@ public class ScoreManager : MonoBehaviour
     public int score_p1, score_p2, score_p3, score_p4;
     public int maxScore = 15;
     public BallController ballcontroller;
+    public GameManager gm;
     public void AddScore(string p_side, int increment)
     {
         if (p_side == "p1")
         {
-            score_p1 += increment;
+            if (score_p1 >= 15)
+            {
+                gm.PaddleDied(1);
+            }
+            else
+            {
+                score_p1 += increment;
+            }
         }
         else if (p_side == "p2")
         {
@@ -29,10 +37,7 @@ public class ScoreManager : MonoBehaviour
             score_p4 += increment;
         }
         //ballcontroller.ResetBall();
-        //if (score_p1 >= maxScore || score_p2 >= maxScore)
-        //{
-        //    GameOver();
-        //}
+        
 
 
     }

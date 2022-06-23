@@ -2050,8 +2050,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22eb4d4ed9e63ca49b65b5fdf2b714ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBallAmount: 5
-  spawnInterval: 2
+  maxBallAmount: 999
+  spawnInterval: 1
+  paddle1: {fileID: 1903039227}
+  paddle2: {fileID: 145420234}
+  paddle3: {fileID: 507483434}
+  paddle4: {fileID: 922797845}
   ballTemplateList:
   - {fileID: 1116764650}
   - {fileID: 694109149}
@@ -2092,6 +2096,7 @@ MonoBehaviour:
   score_p4: 0
   maxScore: 15
   ballcontroller: {fileID: 1116764656}
+  gm: {fileID: 1480046208}
 --- !u!4 &1485006348
 Transform:
   m_ObjectHideFlags: 0

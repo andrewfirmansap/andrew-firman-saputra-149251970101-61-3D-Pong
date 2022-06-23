@@ -7,6 +7,11 @@ public class GameManager : MonoBehaviour
 
     public int maxBallAmount;
     public int spawnInterval;
+    public GameObject paddle1;
+    public GameObject paddle2;
+    public GameObject paddle3;
+    public GameObject paddle4;
+
     private float timer;
     public List<GameObject> ballTemplateList;
     private List<GameObject> ballList;
@@ -43,5 +48,12 @@ public class GameManager : MonoBehaviour
             ballList.Add(ball);
         }
         
+    }
+    public void PaddleDied(int paddleNum)
+    {
+        if (paddleNum == 1)
+        { 
+            Debug.Log("Paddle 1 died!");
+        }
     }
 }
