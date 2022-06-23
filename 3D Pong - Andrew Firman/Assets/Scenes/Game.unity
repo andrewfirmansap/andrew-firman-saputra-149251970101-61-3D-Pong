@@ -2254,7 +2254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxBallAmount: 5
-  spawnInterval: 2
+  spawnInterval: 1
   paddle1: {fileID: 1903039227}
   paddle2: {fileID: 145420234}
   paddle3: {fileID: 507483434}
