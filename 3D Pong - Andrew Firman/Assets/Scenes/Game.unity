@@ -2056,6 +2056,7 @@ MonoBehaviour:
   paddle2: {fileID: 145420234}
   paddle3: {fileID: 507483434}
   paddle4: {fileID: 922797845}
+  paddleDiedMaterial: {fileID: 2100000, guid: ca21b1cf9e4d36747892790bd9da8243, type: 2}
   ballTemplateList:
   - {fileID: 1116764650}
   - {fileID: 694109149}

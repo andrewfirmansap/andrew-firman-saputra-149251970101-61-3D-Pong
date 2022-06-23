@@ -11,7 +11,11 @@ public class GameManager : MonoBehaviour
     public GameObject paddle2;
     public GameObject paddle3;
     public GameObject paddle4;
-
+    public Material paddleDiedMaterial;
+    private bool P1isDead;
+    private bool P2isDead;
+    private bool P3isDead;
+    private bool P4isDead;
     private float timer;
     public List<GameObject> ballTemplateList;
     private List<GameObject> ballList;
@@ -20,6 +24,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ballList = new List<GameObject>();
+        P1isDead = false;
+        P2isDead = false;
+        P3isDead = false;
+        P4isDead = false;
     }
 
     // Update is called once per frame
@@ -32,6 +40,7 @@ public class GameManager : MonoBehaviour
             SpawnRandomBall();
             timer -= spawnInterval;
         }
+        
 
     }
     public void SpawnRandomBall()
@@ -52,8 +61,11 @@ public class GameManager : MonoBehaviour
     public void PaddleDied(int paddleNum)
     {
         if (paddleNum == 1)
-        { 
+        {
+            paddle1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            paddle1.GetComponent<MeshRenderer>().material = paddleDiedMaterial;
             Debug.Log("Paddle 1 died!");
+
         }
     }
 }

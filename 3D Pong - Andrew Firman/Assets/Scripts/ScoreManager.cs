@@ -15,29 +15,70 @@ public class ScoreManager : MonoBehaviour
     {
         if (p_side == "p1")
         {
-            if (score_p1 >= 15)
+            if (score_p1 >= maxScore)
             {
-                gm.PaddleDied(1);
+                return;
             }
             else
             {
                 score_p1 += increment;
             }
+            if (score_p1 >= 15)
+            {
+                gm.PaddleDied(1);
+            }
         }
         else if (p_side == "p2")
         {
-            score_p2 += increment;
+            if (score_p2 >= maxScore)
+            {
+                return;
+            }
+            else
+            {
+                score_p2 += increment;
+            }
+            if (score_p2 >= 15)
+            {
+                gm.PaddleDied(2);
+            }
         }
         else if (p_side == "p3")
         {
-            score_p3 += increment;
+            if (score_p3 >= maxScore)
+            {
+                return;
+            }
+            else
+            {
+                score_p3 += increment;
+            }
+            if (score_p3 >= 15)
+            {
+                gm.PaddleDied(3);
+            }
         }
         else if (p_side == "p4")
         {
-            score_p4 += increment;
+            if (score_p4 >= maxScore)
+            {
+                return;
+            }
+            else
+            {
+                score_p4 += increment;
+            }
+            if (score_p4 >= 15)
+            {
+                gm.PaddleDied(4);
+            }
         }
-        //ballcontroller.ResetBall();
         
+        
+       
+        
+        //ballcontroller.ResetBall();
+
 
 
     }
